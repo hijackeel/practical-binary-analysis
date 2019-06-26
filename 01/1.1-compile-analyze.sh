@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -x
 
-grep --color -E '\++ |hello_world|hello_sun|hello_moon|' <( {
+grep --color -E '\+\+ |hello_world|hello_sun|hello_moon|' <( {
 
 # Generate assembly file in Intel syntax:
 gcc -S -masm=intel 1.1-locating-functions.c
