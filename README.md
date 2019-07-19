@@ -10,3 +10,5 @@ A shell script generates the files, and displays information and content with fi
 #### 1.2 In binaries, why are data and code separated into different sections? How does the loading process differ for code and data sections? Is it necessary to copy all sections into memory when a binary is loaded for execution?
 
 #### 2.1 Use a hex viewer (such as xxd) to view the bytes of an ELF binary (such as ls) in hexadecimal format. Try to find all of the ELF header fields and see whether they make sense to you.
+
+A shell script uses xxd to examine itself.

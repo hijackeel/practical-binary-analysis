@@ -20,22 +20,27 @@ echo ''
 
 echo e_ident[4] / EI_CLASS / File class:
 xxd -s 4 -l 1 $ELF
+echo "2 == ELFCLASS64 (64-bit objects)"
 echo ''
 
 echo e_ident[5] / EI_DATA / Data encoding:
 xxd -s 5 -l 1 $ELF
+echo "1 == ELFDATA2LSB (2's complement, little endian)"
 echo ''
 
 echo e_ident[6] / EI_VERSION / File version:
 xxd -s 6 -l 1 $ELF
+echo "1 == EV_CURRENT"
 echo ''
 
 echo e_ident[7] / EI_OSABI / OS ABI identification:
 xxd -s 7 -l 1 $ELF
+echo "0 == ELFOSABI_NONE (UNIX System V ABI)"
 echo ''
 
 echo e_ident[8] / EI_ABIVERSION / ABI version:
 xxd -s 8 -l 1 $ELF
+echo "Not necessary to specify if EI_OSABI == ELFOSABI_NONE."
 echo ''
 
 echo e_ident[9-15] / EI_PAD / Padding bytes:
@@ -44,14 +49,21 @@ echo ''
 
 echo e_type / Object file type:
 xxd -s 16 -l 2 $ELF
+echo "3 == ET_DYN (shared object file)"
+echo "Note that not only libraries are shared object files.
+Position-Independent Executables will also show up as ET_DYN.
+PIE is a way of achieving Address Space Layout Randomization
+(a security technique) for executables."
 echo ''
 
 echo e_machine / Architecture:
 xxd -s 18 -l 2 $ELF
+echo "62 == 0x3e == EM_X86_64 (AMD x86-64 architecture)"
 echo ''
 
 echo e_version / Object file version:
 xxd -s 20 -l 4 $ELF
+echo "1 == EV_CURRENT"
 echo ''
 
 echo e_entry / Entry point virtual address:
